@@ -31,5 +31,11 @@ public interface EmployeeMapper {
             "values (#{name},#{username},#{password},#{phone},#{sex},#{idNumber},#{createTime},#{updateTime},#{createUser},#{updateUser},#{status})")
     void insert(Employee employee);
 
-
+    /**
+     * 根据id查询信息
+     * @param id
+     * @return
+     */
+    @Select("select * from employee where id = #{id}")
+    Employee getById(Long id);
 }
